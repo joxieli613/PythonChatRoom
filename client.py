@@ -57,7 +57,7 @@ class Client:
 
     def write(self):
         temp = self.input_area.get('1.0', 'end')
-        message ="temp" #f"{self.nickname}:{temp}"
+        message = f"{self.nickname}:{temp}"
         self.sock.send(message.encode('utf-8'))
         self.input_area.delete('1.0','end')
 
