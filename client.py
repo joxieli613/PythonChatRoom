@@ -48,7 +48,7 @@ class Client:
         self.input_area.pack(padx = 20, pady = 5)
 
         self.send_button = tkinter.Button(self.win, text ="Send", command = self.write)
-        self.send_button.connfig(font = ("Arial", 12))
+        self.send_button.config(font = ("Arial", 12))
         self.send_button.pack(padx = 20, pady = 5)
 
         self.gui_done = True
@@ -56,7 +56,8 @@ class Client:
         self.win.mainloop()
 
     def write(self):
-        message = f"{self.nickname} : {self.input_area.get('1.0' , 'end')}"
+        temp = self.input_area.get('1.0', 'end')
+        message ="temp" #f"{self.nickname}:{temp}"
         self.sock.send(message.encode('utf-8'))
         self.input_area.delete('1.0','end')
 
